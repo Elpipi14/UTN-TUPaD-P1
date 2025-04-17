@@ -85,10 +85,10 @@ print("cantidad de intentos realizados: ", intentos)
 for cont in range(100,-2,-2):
     print(cont)
 
-7) Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
-número entero positivo indicado por el usuario.
+# 7) Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
+# número entero positivo indicado por el usuario.
 
-Codigo:
+# Codigo:
 
 user = int(input("Ingrese un número entero positivo: "))
 resultado = 0
