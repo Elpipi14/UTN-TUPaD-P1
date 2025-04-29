@@ -101,13 +101,15 @@ print(dobles)
 compras = [["pan", "leche"], ["arroz", "fideos", "salsa"], ["agua"]]
 # A:
 compras[2].append("jugo")
+print(compras)
 # B:
-pos_fideos = compras[1].index("fideos")
-compras[1][pos_fideos] = "tallarines"
+compras[1][1] = "tallarines"
+print(compras)
 # C:
 compras[0].remove("pan")
-# D:
 print(compras)
+# D:
+print(f"lista final: {compras}")
 
 
 
@@ -119,6 +121,16 @@ print(compras)
 # ● Posición lista_anidada[3]: False
 # Imprimir la lista resultante por pantalla.
 
-lista_anidada = [15,True, [25.5, 57.9, 30.6], False]
+lista_anidada = []
+lista_anidada.append(15)
+lista_anidada.append(True)
+lista_anidada.append([])
+lista_anidada[2].append(25.5)
+lista_anidada[2].append(57.9)
+lista_anidada[2].append(30.6)
+lista_anidada.append(False)
 
 print(lista_anidada)
+
+lista = [15,True, [25.5, 57.9, 30.6], False]
+print(lista)
