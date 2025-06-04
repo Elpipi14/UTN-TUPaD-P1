@@ -1,7 +1,7 @@
 from itertools import product
 
 # ======= INGRESO DE DATOS ========
-dnis = ["31568054", "36054031"]
+dnis = ["31568054", "36054031", "28658781"]
 años_nacimientos = [2003, 1999, 2000]
 
 #1 ======= CREACIÓN DE CONJUNTOS ========
@@ -54,10 +54,20 @@ if all(0 not in c for c in conjuntos_dni):
     print("Grupo sin ceros.")
 
 # Cantidad de conjuntos pares e impares
-pares = sum(1 for c in conjuntos_dni if len(c) % 2 == 0)
+pares = 0
+print("\n--- Paridad de conjuntos por DNI ---")
+for dni, conjunto in zip(dnis, conjuntos_dni):
+    cantidad = len(conjunto)
+    tipo = "PAR" if cantidad % 2 == 0 else "IMPAR"
+    print(f"DNI {dni} → Conjunto de {cantidad} dígitos únicos → {tipo}")
+    if tipo == "PAR":
+        pares += 1
+
 impares = len(conjuntos_dni) - pares
+
 if pares > impares:
-    print("Grupo par.")
+    print("\n✅ Grupo par.")
+    
 
 #5 ======= OPERACIONES CON AÑOS DE NACIMIENTO ========
 print("\n--- Análisis de años de nacimiento ---")
