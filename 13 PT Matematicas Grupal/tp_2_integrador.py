@@ -1,11 +1,10 @@
 from itertools import product
 
 # ======= INGRESO DE DATOS ========
-# Reemplazar estos DNIs por los del grupo
-dnis = ["23456789", "22334455", "98765432"]
-anios_nacimiento = [2003, 1999, 2000]
+dnis = ["31568054", "36054031"]
+años_nacimientos = [2003, 1999, 2000]
 
-# ======= CREACIÓN DE CONJUNTOS ========
+#1 ======= CREACIÓN DE CONJUNTOS ========
 conjuntos_dni = []
 for dni in dnis:
     digitos = set(int(d) for d in dni)
@@ -15,7 +14,7 @@ print("Conjuntos de dígitos únicos por DNI:")
 for i, c in enumerate(conjuntos_dni):
     print(f"Conjunto {i + 1}: {c}")
 
-# ======= OPERACIONES ENTRE CONJUNTOS ========
+#2 ======= OPERACIONES ENTRE CONJUNTOS ========
 print("\n--- Operaciones entre conjuntos ---")
 union = set.union(*conjuntos_dni)
 interseccion = set.intersection(*conjuntos_dni)
@@ -30,7 +29,7 @@ for i in range(len(conjuntos_dni)):
         print(f"Conjunto {j+1} - Conjunto {i+1}: {b - a}")
         print(f"Diferencia simétrica ({i+1} Δ {j+1}): {a.symmetric_difference(b)}")
 
-# ======= SUMA Y FRECUENCIA DE DÍGITOS ========
+#3 ======= SUMA Y FRECUENCIA DE DÍGITOS ========
 print("\n--- Frecuencia de dígitos y suma por DNI ---")
 for dni in dnis:
     suma = sum(int(d) for d in dni)
@@ -38,14 +37,14 @@ for dni in dnis:
     for digito in sorted(set(dni)):
         print(f" - Dígito {digito} aparece {dni.count(digito)} veces")
 
-# ======= CONDICIONES LÓGICAS ========
+#4 ======= CONDICIONES LÓGICAS ========
 print("\n--- Evaluación de condiciones lógicas ---")
-# Ejemplo: diversidad numérica
+# diversidad numérica
 for i, c in enumerate(conjuntos_dni):
     if len(c) > 6:
         print(f"Conjunto {i+1} tiene alta diversidad numérica.")
 
-# Ejemplo: dígito común
+#dígito común
 digito_comun = set.intersection(*conjuntos_dni)
 if digito_comun:
     print(f"Dígito(s) compartido(s): {digito_comun}")
@@ -60,28 +59,28 @@ impares = len(conjuntos_dni) - pares
 if pares > impares:
     print("Grupo par.")
 
-# ======= OPERACIONES CON AÑOS DE NACIMIENTO ========
+#5 ======= OPERACIONES CON AÑOS DE NACIMIENTO ========
 print("\n--- Análisis de años de nacimiento ---")
-pares_ = sum(1 for a in anios_nacimiento if a % 2 == 0)
-impares_ = len(anios_nacimiento) - pares_
+pares_ = sum(1 for a in años_nacimientos if a % 2 == 0)
+impares_ = len(años_nacimientos) - pares_
 print(f"Años pares: {pares_} | Años impares: {impares_}")
 
 # Grupo Z
-if all(a > 2000 for a in anios_nacimiento):
+if all(a > 2000 for a in años_nacimientos):
     print("Grupo Z")
 
 # Año bisiesto
 def es_bisiesto(anio):
     return (anio % 4 == 0 and anio % 100 != 0) or (anio % 400 == 0)
 
-if any(es_bisiesto(a) for a in anios_nacimiento):
+if any(es_bisiesto(a) for a in años_nacimientos):
     print("Tenemos un año especial (bisiesto) en el grupo.")
 
 # Producto cartesiano (años x edades actuales)
 from datetime import datetime
 anio_actual = datetime.now().year
-edades = [anio_actual - a for a in anios_nacimiento]
-pc = list(product(anios_nacimiento, edades))
+edades = [anio_actual - a for a in años_nacimientos]
+pc = list(product(años_nacimientos, edades))
 print("\nProducto cartesiano (Años x Edades):")
 for par in pc:
     print(par)
