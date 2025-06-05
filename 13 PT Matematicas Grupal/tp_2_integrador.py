@@ -1,7 +1,7 @@
 from itertools import product
 
 # ======= INGRESO DE DATOS ========
-dnis = ["31568054", "36054031", "28658781"]
+dnis = ["31568054", "36054031"]
 años_nacimientos = [2003, 1999, 2000]
 
 #1 ======= CREACIÓN DE CONJUNTOS ========
