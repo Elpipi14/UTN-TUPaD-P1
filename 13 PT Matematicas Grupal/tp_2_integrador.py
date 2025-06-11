@@ -26,12 +26,15 @@ for i, j in combinations(range(len(conjuntos_dni)), 2):
     dif_ab = a - b
     dif_ba = b - a
     sim = a.symmetric_difference(b)
-    print(f"\nDIFERENCIA {i+1} - {j+1}:", 
-          dif_ab if dif_ab else "Sin diferencia: todos los dígitos están contenidos en el otro DNI.")
-    print(f"DIFERENCIA {j+1} - {i+1}:", 
-          dif_ba if dif_ba else "Sin diferencia: todos los dígitos están contenidos en el otro DNI.")
-    print(f"DIFERENCIA SIMÉTRICA ({i+1} Δ {j+1}):", 
-          sim if sim else "No hay diferencia simétrica: los conjuntos son idénticos.")
+    
+    print(f"\nDIFERENCIA {i+1} - {j+1}:",
+          dif_ab if dif_ab else "{}")
+    
+    print(f"DIFERENCIA {j+1} - {i+1}:",
+          dif_ba if dif_ba else "{}")
+    
+    print(f"DIFERENCIA SIMÉTRICA ({i+1} Δ {j+1}):",
+          sim if sim else "{}  ← No hay diferencia simétrica: los conjuntos son idénticos.")
 
 # ======= 3. SUMA Y FRECUENCIA DE DÍGITOS ========
 print("\n--- Frecuencia de dígitos y suma por DNI ---")
